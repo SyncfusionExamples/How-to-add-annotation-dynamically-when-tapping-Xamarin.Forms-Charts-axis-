@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:syncfusion="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart.XForms" xmlns:local="clr-namespace:ChartSample"
+             x:Class="ChartSample.MainPage">
+    <ContentPage.BindingContext>
+        <local:ViewModel/>
+    </ContentPage.BindingContext>
+   
+    <StackLayout >
+        <syncfusion:SfChart x:Name="chart" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <syncfusion:SfChart.Title>
+                <syncfusion:ChartTitle Text="CROP YEILD FORECASTING" FontAttributes="Bold"/>
+            </syncfusion:SfChart.Title>
+            <syncfusion:SfChart.PrimaryAxis>
+                <syncfusion:CategoryAxis  LabelClicked="CategoryAxis_LabelClicked"/>
+            </syncfusion:SfChart.PrimaryAxis>
+            <syncfusion:SfChart.SecondaryAxis>
+                <syncfusion:NumericalAxis Minimum="0" Maximum="50"/>
+            </syncfusion:SfChart.SecondaryAxis>
+            <syncfusion:ColumnSeries Color="#bcdbb7" ItemsSource="{Binding Data}" XBindingPath="XValue" YBindingPath="YValue1"/>
+        </syncfusion:SfChart>
+    </StackLayout>
+</ContentPage>
